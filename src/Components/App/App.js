@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from '../Header/Header'
 import Stories from '../Stories/Stories'
+import SearchBar from '../SearchBar/SearchBar'
 
 const App = () => {
   const [news, setNews] = useState();
@@ -30,6 +31,7 @@ const App = () => {
     {loading ? <h1>Loading...</h1> : 
       <main>
         <Header />
+        <SearchBar />
         <Stories news={news}/>
       </main>
     }
