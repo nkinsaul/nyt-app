@@ -1,5 +1,6 @@
 import {React, useEffect, useState} from "react";
 import Story from '../Story/Story'
+import './Stories.css'
 
 const Stories = ({news}) => {
 
@@ -9,12 +10,13 @@ const Stories = ({news}) => {
         key={index}
         title={story.title}
         abstract={story.abstract}
+        pictures={story.multimedia}
       />
     )
   })
   
   return (
-    <div>
+    <div className="stories-grid">
       {mappedStories}
     </div>
   )

@@ -1,10 +1,10 @@
 import React from "react";
 
-const Story = ({title, abstract}) => {
+const Story = ({title, abstract, pictures}) => {
   return (
     <div>
       <h1>{title}</h1>
-      <h2>{abstract}</h2>
+      <img src={pictures[1].url}/>
     </div>
   )
 }
