@@ -1,0 +1,5 @@
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0% 3% 5% 3%
+}
