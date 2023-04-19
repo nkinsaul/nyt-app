@@ -1,0 +1,15 @@
+.story {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  width: 75%;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.title {
+  font-size: 1em;
+  text-align: center;
+}
