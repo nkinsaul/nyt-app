@@ -1,32 +1,21 @@
 import {React, useEffect, useState} from "react";
+import Story from '../Story/Story'
 
-const Stories = () => {
-  const [news, setNews] = useState();
-  const [error, setError] = useState();
+const Stories = ({news}) => {
 
-  const getStories = () => {
-    const url = `https://api.nytimes.com/svc/topstories/v2/us.json?api-key=dUHXsUzOQoAMZs5klSRIGW2cU4Bawp9g`
-    return fetch(url)
-    .then(res => {
-      if (res.ok) {
-        return res.json()
-      } else {
-        throw new Error(res)
-      }
-    })
-    .catch(err => {
-      setError(err)
-    })
-  }
-
-  useEffect(() => {
-    getStories()
-    .then (data => setNews(data))  
-  },[])
-
+  const mappedStories = news.map((story, index) => {
+    return (
+      <Story 
+        key={index}
+        title={story.title}
+        abstract={story.abstract}
+      />
+    )
+  })
+  
   return (
     <div>
-      Stories
+      {mappedStories}
     </div>
   )
 }
