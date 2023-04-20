@@ -9,10 +9,9 @@ import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [news, setNews] = useState([]);
-  const [lsNews, setlsNews] = useState()
+  const [filteredNews, setFilteredNews] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-  const [focusStory, setFocusStory] = useState(0);
  
   const getStories = async () => {
     const url = 'https://api.nytimes.com/svc/topstories/v2/us.json?api-key=dUHXsUzOQoAMZs5klSRIGW2cU4Bawp9g'
@@ -27,13 +26,21 @@ const App = () => {
     }
   }
 
+  const searchNews = (keyword) => {
+    const filterNews = news.filter(news => {
+      return news.title.toLowerCase().includes(keyword) ||
+      news.abstract.toLowerCase().includes(keyword)
+    })
+    setFilteredNews(filterNews)
+  }
+
   useEffect(() => {
     getStories()
   },[])
 
-  useEffect(() => {
-    localStorage.setItem('news', JSON.stringify(news))
-  },[news])
+  // useEffect(() => {
+  //   localStorage.setItem('news', JSON.stringify(news))
+  // },[news])
 
   return (
     <main>
@@ -43,9 +50,10 @@ const App = () => {
 
         <Route exact path='/' element={
           (loading) ? <h1>Loading...</h1> : 
+          (error) ? <h1>Whoops somethings wrong</h1> :
             <>
-              <SearchBar />
-              <Stories news={news} setFocusStory={setFocusStory}/>
+              <SearchBar searchNews={searchNews}/>
+              <Stories news={filteredNews.length > 0 ? filteredNews : news} />
             </>}
         />
 
