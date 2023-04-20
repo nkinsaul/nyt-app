@@ -8,6 +8,7 @@ const Stories = ({news}) => {
     return (
       <Story 
         key={index}
+        id={index}
         title={story.title}
         abstract={story.abstract}
         pictures={story.multimedia}

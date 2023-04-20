@@ -3,6 +3,7 @@ import './App.css';
 import Header from '../Header/Header'
 import Stories from '../Stories/Stories'
 import SearchBar from '../SearchBar/SearchBar'
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [news, setNews] = useState();
@@ -27,15 +28,21 @@ const App = () => {
   },[])
 
   return (
-    <>
-    {loading ? <h1>Loading...</h1> : 
-      <main>
-        <Header />
-        <SearchBar />
-        <Stories news={news}/>
-      </main>
-    }
-    </>
+    <main>
+      <Header />
+
+      <Routes>
+
+        <Route exact path='/' element={
+          (loading) ? <h1>Loading...</h1> : 
+            <>
+              <SearchBar />
+              <Stories news={news}/>
+            </>}
+        />
+
+      </Routes>
+    </main>
   );
 }
 
