@@ -3,12 +3,14 @@ import './App.css';
 import Header from '../Header/Header'
 import Stories from '../Stories/Stories'
 import SearchBar from '../SearchBar/SearchBar'
+import StoryView from '../StoryView/StoryView';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
-  const [news, setNews] = useState();
-  const [error, setError] = useState();
+  const [news, setNews] = useState([]);
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const [focusStory, setFocusStory] = useState(0);
  
   const getStories = async () => {
     const url = 'https://api.nytimes.com/svc/topstories/v2/us.json?api-key=dUHXsUzOQoAMZs5klSRIGW2cU4Bawp9g'
@@ -37,9 +39,11 @@ const App = () => {
           (loading) ? <h1>Loading...</h1> : 
             <>
               <SearchBar />
-              <Stories news={news}/>
+              <Stories news={news} setFocusStory={setFocusStory}/>
             </>}
         />
+
+        <Route path='/story/:id' element={<StoryView />} />
 
       </Routes>
     </main>
