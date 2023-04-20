@@ -1,0 +1,21 @@
+.storyView {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.infoCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+  margin-right: 5%;
+}
+
+.imgCont {
+  width: 45%;
+}
+
+.SVimg {
+  width: 100%;
+}
