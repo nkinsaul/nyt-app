@@ -13,7 +13,7 @@ const SearchBar = ({searchNews}) => {
       className="search-bar"
       type="search"
       placeholder="Search"
-      onChange={e => setKeyword(e.target.value)}
+      onChange={e => setKeyword(e.target.value.toLowerCase())}
     />
   )
 }
