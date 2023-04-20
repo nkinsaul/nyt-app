@@ -18,7 +18,7 @@ const StoryView = ({news}) => {
         <h1 className="SVtitle">{focusStory.title}</h1>
         <h2 className="SVabstract">{focusStory.abstract}</h2>
         <Link to={`${focusStory.url}`}>
-          <h3>Full NYT Article</h3>
+          <h3 className="SVlink">Full NYT Article</h3>
         </Link>
       </div>
       <div className="imgCont">
