@@ -1,8 +1,13 @@
 import React from "react";
+import { useLocation } from "react-router";
 
-const StoryView = () => {
+
+const StoryView = ({news}) => {
+  const location = useLocation();
+  const id = location.pathname.split('/').slice(-1)[0]
+
   return (
-    <h1>Story Details</h1>
+    <h1>{news[id].title}</h1>
   )
 }
 

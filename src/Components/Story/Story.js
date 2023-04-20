@@ -5,7 +5,7 @@ import './Story.css'
 const Story = ({id, title, abstract, pictures, setFocusStory}) => {
   return (
     <div className="story">
-      <Link to={`/story/${id}`} onClick={setFocusStory(id)}>
+      <Link to={`/story/${id}`}>
         <img className="thumbnail" src={pictures[1].url}/>
       </Link>
       <h1 className="title">{title}</h1>

@@ -43,7 +43,7 @@ const App = () => {
             </>}
         />
 
-        <Route path='/story/:id' element={<StoryView />} />
+        <Route path='/story/:id' element={<StoryView news={news}/>} />
 
       </Routes>
     </main>
