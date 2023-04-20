@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ReactDOM } from 'react-dom';
 import './App.css';
 import Header from '../Header/Header'
 import Stories from '../Stories/Stories'
@@ -8,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [news, setNews] = useState([]);
+  const [lsNews, setlsNews] = useState()
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
   const [focusStory, setFocusStory] = useState(0);
@@ -28,6 +30,10 @@ const App = () => {
   useEffect(() => {
     getStories()
   },[])
+
+  useEffect(() => {
+    localStorage.setItem('news', JSON.stringify(news))
+  },[news])
 
   return (
     <main>
