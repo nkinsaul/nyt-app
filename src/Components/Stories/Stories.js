@@ -8,7 +8,7 @@ const Stories = ({news}) => {
     return (
       <Story 
       key={index}
-      id={index}
+      id={story.published_date}
       title={story.title}
       abstract={story.abstract}
       pictures={story.multimedia}

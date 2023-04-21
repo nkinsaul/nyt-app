@@ -9,3 +9,9 @@ header {
   font-size: 4em;
   border-bottom: 1px solid black;
 }
+
+.header-link {
+  text-decoration: none;
+  width: 100%;
+  color: black;
+}
