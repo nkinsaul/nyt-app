@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './Header.css'
 
 const Header = () => {
   return (
     <header>
-      New York Times
+      <Link to='/'>
+          New York Times
+      </Link>
     </header>
   )
 }
