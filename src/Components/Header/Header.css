@@ -10,7 +10,7 @@ header {
   border-bottom: 1px solid black;
 }
 
-a {
+.header-link {
   text-decoration: none;
   width: 100%;
   color: black;

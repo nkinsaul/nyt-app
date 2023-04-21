@@ -5,7 +5,7 @@ import './Header.css'
 const Header = () => {
   return (
     <header>
-      <Link to='/'>
+      <Link to='/' className="header-link">
           New York Times
       </Link>
     </header>
