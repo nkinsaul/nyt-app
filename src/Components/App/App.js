@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ReactDOM } from 'react-dom';
 import './App.css';
 import Header from '../Header/Header'
 import Stories from '../Stories/Stories'
@@ -37,10 +36,6 @@ const App = () => {
   useEffect(() => {
     getStories()
   },[])
-
-  // useEffect(() => {
-  //   localStorage.setItem('news', JSON.stringify(news))
-  // },[news])
 
   return (
     <main>
